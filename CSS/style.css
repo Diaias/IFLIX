@@ -4,12 +4,42 @@ body{
 .header{
     width: 100%;
     position: absolute;
-    height: 25px;
-    background-color: black;
     padding: 25px;
+    background-color: rgb(30, 30, 30);
+    border-bottom: 3px solid rgb(217,25,33,255);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 .logo{
-    height: 100%;
-    width: fit-content;
-    display: flex;
+    float: right;
+    color: rgb(217,25,33,255);
+    font-size: 50px;
+    font-weight: 750;
+    font-family: 'Bebas Neue', sans-serif;
+    grid-area: 1 / 1 / 2 / 2;
+}
+.cadastrar{
+    float: right;
+    color: rgb(217,25,33,255);
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    position: absolute;
+    grid-area: 1 / 3 / 2 / 4;
+}
+.titulos{
+    float: right;
+    color: rgb(217,25,33,255);
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    grid-area: 1 / 4 / 2 / 5;
+}
+.assistidos{
+    float: right;
+    color: rgb(217,25,33,255);
+    font-size: 25px;
+    font-family: 'Bebas Neue', sans-serif;
+    grid-area: 1 / 5 / 2 / 6;
 }
