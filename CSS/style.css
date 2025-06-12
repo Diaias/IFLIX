@@ -11,14 +11,14 @@ body{
     overflow: hidden;
 }
 .efeito:hover{
-    transform: scale(1);
     color: white;
+    transform: scale(1);
 }
 .efeito::after{
     content: '';
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: rgba(217, 25, 31, 1);
     bottom: 0;
     right: 0;
@@ -28,6 +28,7 @@ body{
 }
 .efeito:hover::after{
     transform: scale(1);
+    color: white;
 }
 .header{
     width: 100% - 25px;
@@ -40,7 +41,6 @@ body{
     grid-template-rows: repeat(1, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    
 }
 .logo{
     float: right;
@@ -49,6 +49,7 @@ body{
     font-weight: 750;
     font-family: 'Bebas Neue', sans-serif;
     grid-area: 1 / 1 / 2 / 2;
+    cursor: default;
 }
 .cadastrar{
     float: right;
@@ -90,51 +91,102 @@ body{
 }
 .atras{
     margin-top: auto;
-    width: 80%;
+    width: 90%;
     height: 100%;
     background-color: rgb(50, 50, 50);
-    box-shadow:  0 0 1em rgba(217, 25, 31, 0.5);
+    box-shadow:  0 0 1em rgba(217, 25, 31, 0.3);
     clip-path: inset(0 -2em 0 -2em);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    gap: 80px;
-    padding: 80px;
 }
 .titulo{
     font-size: 40px;
     text-align: center ;
     width: 100%;
     height: 100%;
-    background-color: rgb(30, 30, 30);
-    border-radius: 10px;
-    border: 2px solid rgba(217, 25, 31, 0.8);
+    background-color: rgb(30,30,30, 0.6);
+    border-radius: 25px 0 25px 0;
+    border: 2px solid rgba(217, 25, 31, 0.7);
     font-family: 'Bebas Neue', sans-serif;
     color: white;
-    box-shadow: 0 0 1em rgb(30, 30, 30);
-    padding: 20px;
+    box-shadow: 0 0 1em rgb(30, 30, 30),
+          inset 0 0 1em rgb(20, 20, 20, 0.7);
     padding-bottom: 5px;
     margin: auto;
     margin-top: -20px;
+    font-size: 35px;
 }
 .tipo{
-    font-size: 30px;
+    padding: 20px;
+    font-size: 25px;
     text-align: left;
-    margin-top: 10px;
+    padding-bottom: 0px;
+    padding-top: 5px;
 }
 .assistido{
-    font-size: 30px;
+    padding: 20px;
+    font-size: 25px;
     text-align: left;
-    margin-top: 5px;
+    padding-top: 5px;
 }
-.hover-borda {
-    position: relative;
-    padding: 10px 20px;
-    display: inline-block;
-    cursor: pointer;
-    color: #333;
-    background: white;
-    z-index: 1;
-    overflow: hidden;
-  }
-  
+.tcadastrados{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    width: auto;
+    height: 100%;
+    gap: 80px;
+    padding: 80px;
+}
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 12%;
+    background-color: rgb(30, 30, 30);
+    border-top: 3px solid rgba(217, 25, 31, 1);
+}
+.criart{
+    display: none;
+    width: 100% -4px;
+    height: 100%;
+    float: right;
+    color: rgb(217,25,33,255);
+    font-size: 50px;
+    font-weight: 750;
+    font-family: 'Bebas Neue', sans-serif;
+    grid-area: 1 / 1 / 8 / 5;
+    
+}
+.nome{
+    padding: 10px;
+}
+.nomet{
+    width: 100%;
+    height: 20%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tipot{
+    margin: 20px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.assistidot{
+    margin: 20px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.butaot{
+    margin: 20px;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
