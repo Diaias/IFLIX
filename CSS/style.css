@@ -1,5 +1,7 @@
-body{
-    margin: 0px;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .efeito{
     cursor: pointer;
@@ -82,6 +84,7 @@ body{
     align-items: center;
 }
 .conteudo{
+    
     width: 100%;
     height: 100%;
     background-color: rgb(30, 30, 30);
@@ -90,6 +93,7 @@ body{
     align-items: center;
 }
 .atras{
+    
     margin-top: auto;
     width: 90%;
     height: 100%;
@@ -135,6 +139,8 @@ body{
     height: 100%;
     gap: 80px;
     padding: 80px;
+    padding-bottom: 0px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 .footer{
     position: absolute;
@@ -143,18 +149,7 @@ body{
     background-color: rgb(30, 30, 30);
     border-top: 3px solid rgba(217, 25, 31, 1);
 }
-.criart{
-    display: none;
-    width: 100% -4px;
-    height: 100%;
-    float: right;
-    color: rgb(217,25,33,255);
-    font-size: 50px;
-    font-weight: 750;
-    font-family: 'Bebas Neue', sans-serif;
-    grid-area: 1 / 1 / 8 / 5;
-    
-}
+
 .nome{
     padding: 10px;
 }
@@ -191,6 +186,10 @@ body{
     align-items: center;
 }
 .footer{
+        width: 100%;
+    height: 12%;
+    background-color: rgb(30, 30, 30);
+    border-top: 3px solid rgba(217, 25, 31, 1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -203,4 +202,159 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(255, 255, 255, 0.2);
     margin-bottom: 15px;
+}
+
+.esconder{
+    display: none;
+}
+
+.criart {
+  width: 100%;
+  height: 100%;
+  color: rgb(217,25,33);
+  font-size: 54px; 
+  font-weight: 750;
+  font-family: 'Bebas Neue', sans-serif;
+  grid-area: 1 / 1 / 8 / 5;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nomet, .tipot, .assistidot, .butaot {
+  font-size: 28px; 
+  color: rgb(217,25,33);
+  display: flex;
+  flex-direction: column;
+  gap: 4px; 
+  margin: 0;
+}
+
+.nomet input[type="text"],
+.tipot select {
+  width: 100%;
+  max-width: 420px;
+  padding: 8px 12px;
+  font-size: 18px; 
+  background-color: #1e1e1e;
+  border: 2px solid rgba(217, 25, 31, 0.6);
+  border-radius: 6px;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s;
+  margin: 0;
+}
+
+.nomet input[type="text"]:focus,
+.tipot select:focus {
+  border-color: rgba(217, 25, 31, 1);
+}
+
+.assistidot {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  margin: 0;
+}
+
+.assistidot input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: rgb(217, 25, 31);
+  margin: 0;
+  padding: 0;
+}
+
+.butaot {
+  display: flex;
+  justify-content: center; 
+  margin-top: 6px;
+}
+
+.butaot button {
+  padding: 10px 24px;
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  cursor: pointer;
+  background-color: rgba(217, 25, 31, 0.9);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin: 0;
+}
+
+.butaot button:hover {
+  background-color: rgb(255, 40, 45);
+  transform: scale(1.05);
+}
+.titulo {
+  position: relative; 
+  background-color: rgba(30, 30, 30, 0.6);
+  border-radius: 25px 0 25px 0;
+  border: 2px solid rgba(217, 25, 31, 0.7);
+  box-shadow:
+    0 0 1em rgb(30, 30, 30),
+    inset 0 0 1em rgba(20, 20, 20, 0.7);
+  padding: 20px;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.titulo .excluir-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  color: rgb(217, 25, 31);
+  font-weight: 900;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+}
+
+.titulo:hover .excluir-btn {
+  opacity: 1;
+}
+.excluir-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: rgb(217, 25, 33);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.excluir-btn:hover {
+  color: #ff4444;
+}
+
+.desmarcar-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: 1.5px solid rgb(217, 25, 33);
+  color: rgb(217, 25, 33);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.desmarcar-btn:hover {
+  background-color: rgb(217, 25, 33);
+  color: white;
 }

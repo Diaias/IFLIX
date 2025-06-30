@@ -9,20 +9,18 @@
 <body>
     <div class="header">
         <div class="logo">IFFLIX</div>
-        <div class="cadastrar"><div class="efeito">Cadastrar Título</div></div>
-        <div class="titulos"><div class="efeito">Títulos Cadastrados</div></div>
-        <div class="assistidos"><div class="efeito">Títulos assistidos</div></div>
+        <div class="cadastrar"><div id="cad" class="efeito">Cadastrar Título</div></div>
+        <div class="titulos"><div id="tit" class="efeito">Títulos Cadastrados</div></div>
+        <div class="assistidos"><div id="ass" class="efeito">Títulos assistidos</div></div>
     </div>
     <div class="conteudo">
         <div class="atras">
-            <div class="tcadastrados">
-                <div class="titulo">
-                    <div class="nome">The Last of Us</div>
-                    <div class="tipo">Tipo: Série</div>
-                    <div class="assistido">Assistido: Sim</div>
-                </div>
+            <div class="tcadastrados" id="tcad">
+                <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
             </div>
-            <div class="criart">
+            <div class="criart" id="criart">
                 <div class="nomet">
                     Nome do Titulo
                     <input type="text">
@@ -52,5 +50,6 @@
     <div class="footer">
         <div class="footer2">© 2025 CopyRight: <span style="font-weight: 550;">Yo Mama.com</span></div>
     </div>
+    <script src="../SCRIPTS/script.js"></script>
 </body>
 </html>
