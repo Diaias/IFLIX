@@ -21,12 +21,12 @@ window.onload = function () {
   }
 
   function atualizarProgresso() {
-    const assistidosCount = titulos.filter(t => t.assistido).length;
-    const progressoTexto = `${assistidosCount} de ${titulos.length} títulos assistidos`;
+    var assistidosCount = titulos.filter(t => t.assistido).length;
+    var progressoTexto = `${assistidosCount} de ${titulos.length} títulos assistidos`;
     return progressoTexto;
   }
 
-  function renderizarTitulos() {
+  function Cadastrados() {
     tcad.innerHTML = "";
 
     if (titulos.length === 0) {
@@ -34,7 +34,7 @@ window.onload = function () {
       return;
     }
 
-    const progresso = document.createElement("p");
+    var progresso = document.createElement("p");
     progresso.style.color = "white";
     progresso.style.textAlign = "center";
     progresso.style.marginBottom = "15px";
@@ -42,7 +42,7 @@ window.onload = function () {
     tcad.appendChild(progresso);
 
     titulos.forEach((titulo, index) => {
-      const div = document.createElement("div");
+      var div = document.createElement("div");
       div.className = "titulo";
       div.style.position = "relative";
       div.innerHTML = `
@@ -55,35 +55,35 @@ window.onload = function () {
         </label>
       `;
 
-      const btnExcluir = div.querySelector(".excluir-btn");
+      var btnExcluir = div.querySelector(".excluir-btn");
       btnExcluir.addEventListener("click", () => {
         if (confirm(`Quer mesmo excluir o título "${titulo.nome}"?`)) {
           titulos.splice(index, 1);
-          renderizarTitulos();
+          Cadastrados();
         }
       });
 
-      const checkbox = div.querySelector('input[type="checkbox"]');
+      var checkbox = div.querySelector('input[type="checkbox"]');
       checkbox.addEventListener("change", () => {
         titulos[index].assistido = checkbox.checked;
-        renderizarTitulos();
+        Cadastrados();
       });
 
       tcad.appendChild(div);
     });
   }
 
-  function renderizarAssistidos() {
+  function Assistidos() {
     tcad.innerHTML = "";
 
-    const assistidos = titulos.filter(t => t.assistido);
+    var assistidos = titulos.filter(t => t.assistido);
 
     if (assistidos.length === 0) {
       tcad.innerHTML = "<p style='color: white; text-align:center;'>Nenhum título assistido.</p>";
       return;
     }
 
-    const progresso = document.createElement("p");
+    var progresso = document.createElement("p");
     progresso.style.color = "white";
     progresso.style.textAlign = "center";
     progresso.style.marginBottom = "15px";
@@ -91,7 +91,7 @@ window.onload = function () {
     tcad.appendChild(progresso);
 
     assistidos.forEach((titulo) => {
-      const div = document.createElement("div");
+      var div = document.createElement("div");
       div.className = "titulo";
       div.style.position = "relative";
       div.innerHTML = `
@@ -101,13 +101,13 @@ window.onload = function () {
         <button class="desmarcar-btn" style="position:absolute; top:5px; right:5px; background: transparent; border: 1px solid white; color: white; padding: 3px 8px; border-radius: 4px; cursor: pointer;">Desmarcar</button>
       `;
 
-      const realIndex = titulos.findIndex(t => t === titulo);
+      var realIndex = titulos.findIndex(t => t === titulo);
 
-      const btnDesmarcar = div.querySelector(".desmarcar-btn");
+      var btnDesmarcar = div.querySelector(".desmarcar-btn");
       btnDesmarcar.addEventListener("click", () => {
         if (confirm(`Quer desmarcar "${titulo.nome}" como assistido?`)) {
           titulos[realIndex].assistido = false;
-          renderizarAssistidos();
+          Assistidos();
         }
       });
 
@@ -126,22 +126,22 @@ window.onload = function () {
   tit.addEventListener("click", function () {
     mostrar("tcad");
     esconder("criart");
-    renderizarTitulos();
+    Cadastrados();
   });
 
   ass.addEventListener("click", function () {
     mostrar("tcad");
     esconder("criart");
-    renderizarAssistidos();
+    Assistidos();
   });
 
-  const botaoCadastrar = criart.querySelector("button");
+  var botaoCadastrar = criart.querySelector("button");
   botaoCadastrar.addEventListener("click", function (e) {
     e.preventDefault();
-    const nome = criart.querySelector('input[type="text"]').value.trim();
-    const tipoSelect = criart.querySelector("select");
-    const tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
-    const assistido = criart.querySelector('input[type="checkbox"]').checked;
+    var nome = criart.querySelector('input[type="text"]').value.trim();
+    var tipoSelect = criart.querySelector("select");
+    var tipo = tipoSelect.options[tipoSelect.selectedIndex].text;
+    var assistido = criart.querySelector('input[type="checkbox"]').checked;
 
     if (!nome || tipoSelect.selectedIndex === 0) {
       alert("Por favor, preencha nome e selecione o tipo.");
@@ -150,7 +150,7 @@ window.onload = function () {
 
     titulos.push({ nome, tipo, assistido });
     limparFormulario();
-    renderizarTitulos();
+    Cadastrados();
     mostrar("tcad");
     esconder("criart");
   });
